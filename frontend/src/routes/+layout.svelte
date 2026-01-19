@@ -2,7 +2,7 @@
   // migration layout shell
 </script>
 
-<header style="padding: 1rem; border-bottom: 1px solid #ddd;">
+<header style="padding: 1rem; border-bottom: 1px solid #ddd; text-align: center;">
   <h1>Figures CRUD</h1>
 </header>
 
