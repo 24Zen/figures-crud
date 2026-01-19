@@ -1,11 +1,13 @@
-<script lang="ts">
-  // migration layout shell
+<script>
+  import "../app.css";
 </script>
 
-<header style="padding: 1rem; border-bottom: 1px solid #ddd; text-align: center;">
-  <h1>Figures CRUD</h1>
+<header class="p-4 border-b">
+  <h1 class="text-xl font-bold text-center">
+    Figures CRUD
+  </h1>
 </header>
 
-<main style="padding: 1rem;">
+<main class="p-6">
   <slot />
 </main>
