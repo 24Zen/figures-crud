@@ -1,11 +1,11 @@
 <script lang="ts">
-	import favicon from '$lib/assets/favicon.svg';
-
-	let { children } = $props();
+  // migration layout shell
 </script>
 
-<svelte:head>
-	<link rel="icon" href={favicon} />
-</svelte:head>
+<header style="padding: 1rem; border-bottom: 1px solid #ddd;">
+  <h1>Figures CRUD</h1>
+</header>
 
-{@render children()}
+<main style="padding: 1rem;">
+  <slot />
+</main>
