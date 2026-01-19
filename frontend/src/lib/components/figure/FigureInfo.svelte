@@ -1,37 +1,29 @@
-<script>
-  export let figure;
+<script lang="ts">
+  import type { Figure } from '$lib/types/Figure';
+
+  export let figure: Figure;
 </script>
 
 <div
-  class="bg-white rounded-2xl overflow-hidden
-         shadow-md cursor-pointer
-         transition-all duration-300 ease-out
-         hover:shadow-2xl
-         hover:-translate-y-2
-         hover:scale-[1.02]"
+  class="bg-white rounded-xl shadow
+         hover:shadow-xl transition-all duration-300"
 >
-  <!-- รูป -->
-  <div class="overflow-hidden">
-    <img
-      src={figure.imageUrls?.[0]}
-      alt={figure.character}
-      class="h-48 w-full object-cover
-             transition-transform duration-300
-             hover:scale-110"
-    />
-  </div>
+  <img
+    src={figure.image}
+    alt={figure.name}
+    class="h-48 w-full object-cover rounded-t-xl"
+  />
 
-  <!-- ข้อมูล -->
   <div class="p-4">
-    <h2 class="font-bold text-lg mb-1">
-      {figure.character}
+    <h2 class="font-semibold text-lg">
+      {figure.name}
     </h2>
 
     <p class="text-sm text-gray-500 mb-2">
       {figure.anime}
     </p>
 
-    <p class="text-sm text-gray-700 line-clamp-3">
+    <p class="text-sm text-gray-700">
       {figure.description}
     </p>
   </div>
