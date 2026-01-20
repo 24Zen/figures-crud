@@ -1,27 +1,35 @@
-<script>
-  import { goto } from '$app/navigation';
-  export let figure;
+<script lang="ts">
+  import type { Figure } from '$lib/types/Figure';
 
-  function goDetail() {
-    goto(`/figures/${figure.id}`);
-  }
+  export let figure: Figure;
 </script>
 
 <div
-  class="w-60 bg-white rounded-lg shadow
-         hover:shadow-lg hover:scale-[1.02]
-         transition cursor-pointer"
-  on:click={goDetail}
+  class="group relative bg-white rounded-2xl overflow-hidden
+         shadow-md transition-all duration-300
+         hover:shadow-2xl hover:-translate-y-1"
 >
-  <img
-    src={figure.imageUrls[0]}
-    alt={figure.character}
-    class="h-56 w-full object-cover rounded-t-lg"
-  />
+  <div class="overflow-hidden">
+    <img
+      src={figure.image}
+      alt={figure.name}
+      class="h-56 w-full object-cover
+             transition-transform duration-300
+             group-hover:scale-110"
+    />
+  </div>
 
-  <div class="p-3">
-    <h3 class="font-semibold">{figure.character}</h3>
-    <p class="text-sm text-gray-600">{figure.anime}</p>
-    <p class="text-xs text-gray-500 mt-1">{figure.description}</p>
+  <div class="p-4">
+    <h3 class="font-bold text-lg mb-1">
+      {figure.name}
+    </h3>
+
+    <p class="text-sm text-gray-500 mb-2">
+      {figure.anime}
+    </p>
+
+    <p class="text-sm text-gray-700 line-clamp-2">
+      {figure.description}
+    </p>
   </div>
 </div>
